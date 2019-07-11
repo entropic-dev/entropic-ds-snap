@@ -1,0 +1,24 @@
+---
+name: entropic-ds
+summary: "ds: entropy delta; the entropic client"
+description: |
+  A client for the federated entropy package registry,
+base: core18
+grade: devel
+version: master
+
+parts:
+  ds:
+    source: https://github.com/entropic-dev/entropic.git
+    source-subdir: cli
+    plugin: prod-nodejs
+    nodejs-version: 12.6.0
+    nodejs-package-manager: npm
+
+apps:
+  ds:
+    command: ds
+    plugs:
+      - home
+      - network-bind
+      - network
